@@ -12,13 +12,15 @@ export default function useCron(defaultCron: string, options?: CronOptions) {
   const setCron = (cron: string) =>
     setSearchParams((current) => ({ ...current, cron }));
 
-  let explanation;
+  let explanation: string;
+  let isInvalid = false;
 
   try {
     explanation = cronstrue.toString(cron, options);
   } catch (e) {
-    explanation = e;
+    explanation = String(e);
+    isInvalid = true;
   }
 
-  return [cron, setCron, explanation] as const;
+  return { cron, setCron, explanation, isInvalid } as const;
 }

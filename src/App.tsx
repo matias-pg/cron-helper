@@ -5,7 +5,9 @@ import "./App.css";
 
 function App() {
   const [verbose, setVerbose] = useState(false);
-  const [cron, setCron, explanation] = useCron("* * * * *", { verbose });
+  const { cron, setCron, explanation, isInvalid } = useCron("* * * * *", {
+    verbose,
+  });
 
   return (
     <div className="App">
@@ -32,7 +34,14 @@ function App() {
             onChange={() => setVerbose((verbose) => !verbose)}
           />
         </div>
-        <p>Explanation: {explanation}</p>
+        <p>
+          Explanation:{" "}
+          {isInvalid ? (
+            <span className="error">{explanation}</span>
+          ) : (
+            explanation
+          )}
+        </p>
       </div>
     </div>
   );
