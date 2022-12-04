@@ -1,13 +1,19 @@
-import { useState } from "react";
+import { useState } from "preact/hooks";
 import useCron from "./useCron";
 
-import "./App.css";
+import "./app.css";
 
-function App() {
+export default function App() {
   const [verbose, setVerbose] = useState(false);
   const { cron, setCron, explanation, isInvalid } = useCron("* * * * *", {
     verbose,
   });
+
+  const onInput = ({ target }: { target: EventTarget | null }) => {
+    if (target instanceof HTMLInputElement) {
+      setCron(target.value);
+    }
+  };
 
   return (
     <div className="App">
@@ -20,7 +26,7 @@ function App() {
             id="cron-input"
             type="text"
             value={cron}
-            onChange={({ target: { value } }) => setCron(value)}
+            onInput={onInput}
             autoComplete="off"
           />
         </div>
@@ -46,5 +52,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
