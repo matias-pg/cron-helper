@@ -2,12 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cron Helper</title>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <div id="root">
+      <h1>Cron Helper</h1>
+      <div class="card">
+        <div>
+          <label for="cron-input">Enter your cron here</label>
+          <br />
+          <input id="cron-input" type="text" autocomplete="off" />
+        </div>
+        <div>
+          <label for="verbose-checkbox">Verbose</label>
+          <br />
+          <input id="verbose-checkbox" type="checkbox" />
+        </div>
+        <p id="explanation"></p>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
