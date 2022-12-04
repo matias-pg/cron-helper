@@ -6,8 +6,6 @@ function getSearchParams(defaultCron: string) {
   const cron = params.get("cron") ?? defaultCron;
   const verbose = Boolean(params.get("verbose"));
 
-  console.info(params, { cron, verbose });
-
   return { cron, verbose };
 }
 
