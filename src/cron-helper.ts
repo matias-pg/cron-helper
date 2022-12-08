@@ -24,7 +24,7 @@ function explainCron(...args: Parameters<typeof cronstrue.toString>) {
   try {
     return { isValid: true, explanation: cronstrue.toString(...args) };
   } catch (error) {
-    return { isValid: false, explanation: error };
+    return { isValid: false, explanation: String(error) };
   }
 }
 
@@ -48,7 +48,7 @@ export function setupCronHelper({
       verbose: verboseCheckbox.checked,
     });
 
-    explanationEl.innerHTML = `Explanation: ${explanation}`;
+    explanationEl.textContent = explanation;
     explanationEl.classList.toggle("error", !isValid);
   }
 

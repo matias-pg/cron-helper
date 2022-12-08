@@ -6,20 +6,22 @@
     <title>Cron Helper</title>
   </head>
   <body>
-    <div id="root">
-      <h1>Cron Helper</h1>
-      <div class="card">
-        <div>
-          <label for="cron-input">Enter your cron here</label>
-          <br />
-          <input id="cron-input" type="text" autocomplete="off" />
-        </div>
-        <div>
-          <label for="verbose-checkbox">Verbose</label>
-          <br />
-          <input id="verbose-checkbox" type="checkbox" />
-        </div>
-        <p id="explanation"></p>
+    <div id="app">
+      <h2 id="explanation">Cron Helper</h2>
+      <div>
+        <label for="cron-input">Enter a cron expression</label>
+        <br />
+        <input
+          id="cron-input"
+          type="text"
+          name="cron"
+          autocomplete="off"
+          placeholder="E.g. * * * * *"
+        />
+      </div>
+      <div>
+        <label for="verbose-checkbox">Verbose</label>
+        <input id="verbose-checkbox" type="checkbox" />
       </div>
     </div>
     <script type="module" src="/src/main.ts"></script>

@@ -1,7 +1,13 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 1rem;
+  line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
@@ -23,9 +29,9 @@ body {
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
+h2 {
   line-height: 1.1;
+  margin: 0 0 1.5rem 0;
 }
 
 @media (prefers-color-scheme: light) {
@@ -35,17 +41,34 @@ h1 {
   }
 }
 
-#root {
-  max-width: 1280px;
+#app {
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
-}
-
-.card {
-  padding: 2em;
+  width: 100%;
 }
 
 .error {
   color: red;
+}
+
+#cron-input {
+  width: 100%;
+  max-width: 800px;
+  padding: 0.5rem;
+  text-align: center;
+  border: 1px solid #aaa;
+  border-radius: 0.5rem;
+}
+
+h2,
+#cron-input {
+  font-size: calc(1.325rem + 0.9vw);
+}
+
+@media (min-width: 1200px) {
+  h2,
+  #cron-input {
+    font-size: 2rem;
+  }
 }
