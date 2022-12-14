@@ -52,7 +52,7 @@ h2 {
   color: red;
 }
 
-#cron-input {
+#cron {
   width: 100%;
   max-width: 800px;
   padding: 0.5rem;
@@ -62,13 +62,13 @@ h2 {
 }
 
 h2,
-#cron-input {
+#cron {
   font-size: calc(1.325rem + 0.9vw);
 }
 
 @media (min-width: 1200px) {
   h2,
-  #cron-input {
+  #cron {
     font-size: 2rem;
   }
 }

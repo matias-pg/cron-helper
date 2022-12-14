@@ -7,22 +7,22 @@
   </head>
   <body>
     <div id="app">
-      <h2 id="explanation">Cron Helper</h2>
-      <div>
-        <label for="cron-input">Enter a cron expression</label>
+      <section>
+        <h2 id="explanation">Cron Helper</h2>
+        <label for="cron">Enter a cron expression</label>
         <br />
         <input
-          id="cron-input"
+          id="cron"
           type="text"
-          name="cron"
           autocomplete="off"
           placeholder="E.g. * * * * *"
         />
-      </div>
-      <div>
-        <label for="verbose-checkbox">Verbose</label>
-        <input id="verbose-checkbox" type="checkbox" />
-      </div>
+      </section>
+
+      <section>
+        <label for="verbose">Extended description</label>
+        <input id="verbose" type="checkbox" />
+      </section>
     </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
